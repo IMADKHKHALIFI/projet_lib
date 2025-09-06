@@ -68,7 +68,7 @@ def envoyer_email_nouvel_ouvrage(pk):
         'lien_details': f"http://localhost:8000/ouvrage/{instance.id}"  # Link to the ouvrage details page
     }
     message = render_to_string('adherants/nouvel_ouvrage_email.html', contexte)
-    send_mail(sujet, message, 'nada.mesbah@usmba.ac.ma', emails)
+    send_mail(sujet, message, 'i.elkhelyfy@edu.umi.ac.ma', emails)
     
 
 @receiver(post_save, sender=Ouvrage)
@@ -99,8 +99,8 @@ def send_reservation_confirmation_email(pk):
     }
 
     message = render_to_string('adherants/reservation_confirmation_email.html', contexte)
-    # send_mail(sujet, message, 'nada.mesbah@usmba.ac.ma', emails)
-    send_mail(sujet, message, 'nada.mesbah@usmba.ac.ma', [owner_email])
+    # send_mail(sujet, message, 'i.elkhelyfy@edu.umi.ac.ma', emails)
+    send_mail(sujet, message, 'i.elkhelyfy@edu.umi.ac.ma', [owner_email])
     # send_mail(subject, message, settings.EMAIL_HOST_USER, [instance.user.email], fail_silently=False)
 
 @receiver(post_save, sender=Reservation)
@@ -120,7 +120,7 @@ def send_cancellation_notification(pk):
     }
     
     message = render_to_string('adherants/reservation_cancellation_email.html', contexte)
-    send_mail(sujet, message, 'nada.mesbah@usmba.ac.ma', [owner_email])
+    send_mail(sujet, message, 'i.elkhelyfy@edu.umi.ac.ma', [owner_email])
     
 @receiver(pre_delete, sender=Reservation)
 def pre_delete_reservation(sender, instance, **kwargs):
@@ -148,5 +148,5 @@ def send_email_to_admin(sender, instance, created, **kwargs):
             sujet,
             contenu,
             'email_utilisateur',  
-            ['nada.mesbah@usmba.ac.ma'], 
+            ['i.elkhelyfy@edu.umi.ac.ma'], 
             fail_silently=False,)

@@ -24,7 +24,24 @@ Python 3.x
 Django
 ## Steps to Install:
 ### 1. Clone this repository: 
-'https://github.com/NadaMesbah/Library-Management-Project'
+'https://github.com/IMADKHKHALIFI/projet_lib.git'
+## Run with Docker
+
+To start the project using Docker:
+
+1. Make sure Docker Desktop is installed.
+2. Clone the repository:
+  ```
+  git clone https://github.com/IMADKHKHALIFI/projet_lib.git
+  cd projet_lib
+  ```
+3. Build and start the containers:
+  ```
+  docker compose up --build
+  ```
+4. Open your browser and go to http://localhost:8000
+
+The default Django admin credentials are set in the `.env` file (admin / admin123).
 ### 2. Navigate to the project directory:
   cd gestionbib
 ### 3. Create a virtual environment:
